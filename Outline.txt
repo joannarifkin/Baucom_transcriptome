@@ -1,1 +1,32 @@
 Outline
+
+#0. Identify your goals. Do you want to ...
+    quantify expression levels?
+    call SNPs?
+    identify GO groups / gene functions?
+    categorize mutations into synonymous vs. nonsynomymous? 
+    perform tests of selection? (e.g. dn/ds)
+
+#1. Download / obtain sequence
+    Where will you store your sequence? Is this short-term or long-term storage?
+    Note that most sequencing facilities will give you a portal or wget script to download new reads. 
+    Sample: SRA download to scratch
+
+#2. QC reads (after 1)
+    FastQC
+
+#3. Trim reads (after 1 and 2)
+    Deciding whether to trim 
+    Trimmomatic
+
+#4. Prepare your resources: find your genome, find your annotation (if using), choose your aligner, update your alignment software, and index your genome (before or after 1)
+    Remember, a DNA aligner isn't an RNA aligner!
+    For short reads: STAR or RSubreads https://academic.oup.com/nar/article/47/8/e47/5345150
+    For long reads: GMAP (unlikely to come up) https://academic.oup.com/bioinformatics/article/34/5/748/4562330
+
+#5. Align your reads!
+
+
+#6. Analyze! Select relevant steps below.
+
+    
