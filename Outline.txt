@@ -7,6 +7,9 @@ Outline
     categorize mutations into synonymous vs. nonsynomymous? 
     perform tests of selection? (e.g. dn/ds)
 
+    Relevant papers:  
+        https://doi.org/10.1186/s13059-016-0881-8
+
 #1. Download / obtain sequence
     Where will you store your sequence? Is this short-term or long-term storage?
     Note that most sequencing facilities will give you a portal or wget script to download new reads. 
@@ -21,7 +24,7 @@ Outline
 
 #4. Prepare your resources: find your genome, find your annotation (if using), choose your aligner, update your alignment software, and index your genome (before or after 1)
     Remember, a DNA aligner isn't an RNA aligner!
-    For short reads: STAR or RSubreads https://academic.oup.com/nar/article/47/8/e47/5345150
+    For short reads: STAR or RSubreads https://academic.oup.com/nar/article/47/8/e47/5345150 | https://doi.org/10.1093/nar/gkz114
     For long reads: GMAP (unlikely to come up) https://academic.oup.com/bioinformatics/article/34/5/748/4562330
 
 #5. Align your reads!
@@ -29,4 +32,12 @@ Outline
 
 #6. Analyze! Select relevant steps below.
 
+
+#7. Quantify expression levels
+
+    Count reads - edgeR in rsubreads
+
+    Compare read counts - deSEQ in rsubreads
     
+#8. Call SNPs
+
