@@ -1,14 +1,19 @@
 #!/bin/bash
 
-#SBATCH -p short 		# partition name
-#SBATCH -t 0-2:00 		# hours:minutes runlimit after which job will be killed
-#SBATCH -c 6 		# number of cores requested -- this needs to be greater than or equal to the number of cores you plan to use to run your job
-#SBATCH --mem 16G
-#SBATCH --job-name STAR_index_Rifkin_ipomoea		# Job name
-#SBATCH -o %j.out			# File to which standard out will be written
-#SBATCH -e %j.err 		# File to which standard err will be written
-#SBATCH --mail-user=jlrifkin@umich.edu  
-#SBATCH --mail-type=ALL
+
+
+#SBATCH --job-name=STAR_index_Rifkin_ipomoea
+#SBATCH --mail-user=#SBATCH --mail-user=jlrifkin@umich.edu
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --cpus-per-task=6
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem-per-cpu=10000m 
+#SBATCH --time=10:00
+#SBATCH --partition=standard
+#SBATCH --output=/home/jlrifkin/Analyses/Transcriptome/STAR/Ipomoea_reference/test_%j.log
+#SBATCH --error=/home/jlrifkin/Analyses/Transcriptome/STAR/Ipomoea_reference/error_%j.log
+
 
 STAR --runThreadN 6 \
 --runMode genomeGenerate \
