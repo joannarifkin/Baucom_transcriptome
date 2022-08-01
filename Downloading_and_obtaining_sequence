@@ -1,0 +1,18 @@
+#Using the SRA toolkit to download sequence
+
+    #Install SRA toolkit in your the directory of your choice: https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit
+         
+        wget --output-document sratoolkit.tar.gz https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz
+        tar -vxzf sratoolkit.tar.gz
+        export PATH=$PATH:$PWD/sratoolkit.3.0.0-centos_linux64/bin
+        which fastq-dump #If this doesn't work, check the path and your working directory
+        #This should produce output similar to:
+            /Users/JoeUser/sratoolkit.3.0.0-mac64/bin/fastq-dump
+        #Configure: https://github.com/ncbi/sra-tools/wiki/03.-Quick-Toolkit-Configuration
+            #Store sequence either in /turbo for long-term storage or in /scratch for short-term storage
+
+
+#Downloading a genome or annotation from COGE
+
+    #Use a web browser to navigate to the genome of your choice - e.g., the Ipomoea purpurea genome https://genomevolution.org/coge/GenomeInfo.pl?gid=58735
+    #Transfer the files using Filezilla

@@ -1,0 +1,16 @@
+#Indexing a genome with STAR
+
+    #Installing / updating STAR - https://github.com/alexdobin/STAR
+    # Get latest STAR source from releases
+        wget https://github.com/alexdobin/STAR/archive/2.7.10a.tar.gz #Check for latest version!
+        tar -xzf 2.7.10a.tar.gz
+        cd STAR-2.7.10a
+        cd source
+        make STAR
+    #Add it to your path
+        export PATH=$PATH:$PWD/STAR-2.7.10a/source
+        
+
+
+
+#Indexing a genome with RSubreads
