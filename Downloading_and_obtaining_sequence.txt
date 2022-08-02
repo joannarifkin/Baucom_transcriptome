@@ -16,3 +16,7 @@
 
     #Use a web browser to navigate to the genome of your choice - e.g., the Ipomoea purpurea genome https://genomevolution.org/coge/GenomeInfo.pl?gid=58735
     #Transfer the files using Filezilla
+	#COGE may add a string to the beginning of genome fasta headings. Eric Lyons believes this was done "to make blastdb happy when dealing with string vs number names for chromosomes" and provides a perl script to fix it:
+	cp Ipomoea_purpurea.faa Ipomoea_purpurea_headings_fixed.faa
+	perl -i -p -e "s/^lcl\|//g" Ipomoea_purpurea_headings_fixed.faa &
+	
