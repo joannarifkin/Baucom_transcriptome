@@ -15,6 +15,7 @@
 
 	#Running the index
 		#Write a Slurm script for the indexing job - see STAR_index.sh for an example
+		#scale genomeSAindexNbases relative to genome size according to the formula min(14, log2([genome size]) / 2 - 1)
 		#Put the Slurm script in a directory where you want to run it
 		#Edit the permissions so that the user can execute the script
 			chmod u+x STAR_index.sh

@@ -19,4 +19,6 @@
 	#COGE may add a string to the beginning of genome fasta headings. Eric Lyons believes this was done "to make blastdb happy when dealing with string vs number names for chromosomes" and provides a perl script to fix it:
 	cp Ipomoea_purpurea.faa Ipomoea_purpurea_headings_fixed.faa
 	perl -i -p -e "s/^lcl\|//g" Ipomoea_purpurea_headings_fixed.faa &
-	
+	#STAR requires a gtf. If you downloaded a gffs, consider converting with gffread https://github.com/gpertea/gffread
+		export PATH=$PATH:/home/jlrifkin/Software/gffread
+		gffread -T Ipomoea_purpurea_annos1-cds0-id_typename-nu1-upa1-add_chr0.gid58735.gff -o Ipomoea_purpurea_annos1-cds0-id_typename-nu1-upa1-add_chr0.gid58735.gtf &
