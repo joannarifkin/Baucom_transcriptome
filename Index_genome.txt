@@ -20,6 +20,27 @@
 			chmod u+x STAR_index.sh
 		#Run the script
 			sbatch STAR_index.sh &
+		#If it succeeds, you will end up with the following list of files
+				 chrLength.txt
+				 chrNameLength.txt
+				 chrName.txt
+				 chrStart.txt
+				 error_40329104.log #Your error file title
+				 exonGeTrInfo.tab
+				 exonInfo.tab
+				 geneInfo.tab
+				 Genome
+				 genomeParameters.txt
+				 Log.out
+				 SA
+				 SAindex
+				 sjdbInfo.txt
+				 sjdbList.fromGTF.out.tab
+				 sjdbList.out.tab
+				 STAR_index.sh #Your job file title
+				 test_40329104.log #Your log file title
+				 transcriptInfo.tab
+
 	
 
 #Indexing a genome with RSubreads
