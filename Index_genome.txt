@@ -1,16 +1,25 @@
 #Indexing a genome with STAR
 
     #Installing / updating STAR - https://github.com/alexdobin/STAR
-    # Get latest STAR source from releases
-        wget https://github.com/alexdobin/STAR/archive/2.7.10a.tar.gz #Check for latest version!
-        tar -xzf 2.7.10a.tar.gz
-        cd STAR-2.7.10a
-        cd source
-        make STAR
-    #Add it to your path
-        export PATH=$PATH:$PWD/STAR-2.7.10a/source
-        
+		# Get latest STAR source from releases
+			wget https://github.com/alexdobin/STAR/archive/2.7.10a.tar.gz #Check for latest version!
+			tar -xzf 2.7.10a.tar.gz
+			cd STAR-2.7.10a
+			cd source
+			make STAR
+		#Add it to your path
+			export PATH=$PATH:$PWD/STAR-2.7.10a/source
+		#Or add it to your .bash_profile
+			#Edit your bash profile to include the following line
+			PATH=$PATH:[~your path to this~]/STAR-2.7.10a/source
 
-
+	#Running the index
+		#Write a Slurm script for the indexing job - see STAR_index.sh for an example
+		#Put the Slurm script in a directory where you want to run it
+		#Edit the permissions so that the user can execute the script
+			chmod u+x STAR_index.sh
+		#Run the script
+			sbatch STAR_index.sh &
+	
 
 #Indexing a genome with RSubreads

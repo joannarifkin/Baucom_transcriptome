@@ -18,6 +18,6 @@
 STAR --runThreadN 6 \
 --runMode genomeGenerate \
 --genomeDir /home/jlrifkin/Analyses/Transcriptome/STAR/Ipomoea_reference \
---genomeFastaFiles /nfs/turbo/rsbaucom/lab/IP_genome_COGE/Ipomoea_purpurea.faa \
+--genomeFastaFiles /nfs/turbo/rsbaucom/lab/IP_genome_COGE/Ipomoea_purpurea_headings_fixed.faa \
 --sjdbGTFfile /nfs/turbo/rsbaucom/lab/IP_genome_COGE/Ipomoea_purpurea_annos1-cds0-id_typename-nu1-upa1-add_chr0.gid58735.gff \
 --sjdbOverhang 99
