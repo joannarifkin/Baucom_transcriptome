@@ -14,6 +14,9 @@
 	#Identify the SRA project and samples you want to download
 	#As an example, let's use some samples from Megan Van Etten's work: https://www.ncbi.nlm.nih.gov/sra/?term=PRJNA515629
 	#Use the "Send to" button to download a csv describing what the files are - Send to > File > RunInfo
+	vdb-config --prefetch-to-cwd
+	prefetch SRR13449534
+
 
 #Downloading a genome or annotation from COGE
 
