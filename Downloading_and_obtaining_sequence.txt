@@ -10,7 +10,10 @@
             /Users/JoeUser/sratoolkit.3.0.0-mac64/bin/fastq-dump
         #Configure: https://github.com/ncbi/sra-tools/wiki/03.-Quick-Toolkit-Configuration
             #Store sequence either in /turbo for long-term storage or in /scratch for short-term storage
-
+	
+	#Identify the SRA project and samples you want to download
+	#As an example, let's use some samples from Megan Van Etten's work: https://www.ncbi.nlm.nih.gov/sra/?term=PRJNA515629
+	#Use the "Send to" button to download a csv describing what the files are - Send to > File > RunInfo
 
 #Downloading a genome or annotation from COGE
 
