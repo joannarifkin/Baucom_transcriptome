@@ -5,7 +5,7 @@
         wget --output-document sratoolkit.tar.gz https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz
         tar -vxzf sratoolkit.tar.gz
         export PATH=$PATH:$PWD/sratoolkit.3.0.0-centos_linux64/bin
-        which fastq-dump #If this doesn't work, check the path and your working directory
+		which fastq-dump #If this doesn't work, check the path and your working directory
         #This should produce output similar to:
             /Users/JoeUser/sratoolkit.3.0.0-mac64/bin/fastq-dump
         #Configure: https://github.com/ncbi/sra-tools/wiki/03.-Quick-Toolkit-Configuration
@@ -14,9 +14,14 @@
 	#Identify the SRA project and samples you want to download
 	#As an example, let's use some samples from Megan Van Etten's work: https://www.ncbi.nlm.nih.gov/sra/?term=PRJNA515629
 	#Use the "Send to" button to download a csv describing what the files are - Send to > File > RunInfo
-	vdb-config --prefetch-to-cwd
-	prefetch SRR13449534
-
+	#See more details here: https://github.com/ncbi/sra-tools/wiki/08.-prefetch-and-fasterq-dump
+	#Example for a single file:
+		vdb-config --prefetch-to-cwd #Set the download destination directory to the working directory ("cwd" = "current working directory")
+		prefetch SRR13449534 #This command prepares the download
+		fasterq-dump SRR13449534 #Download the file (fasterq-dump is the high speed version of fastq-dump, which "dumps" a fastq file onto the local server)
+		gzip SRR13449534.fastq & #Compress the fastq file so it takes up less space
+	#For multiple files, use a slurm script like the example. Note that you can change the options for file location etc.
+	#Download_from_SRA_array.sh is a slurm script to download SRA files from an id list like the example attached. To modify it for your own needs, you must 1) make your own id list and 2) change the line #SBATCH --array=1-89%10. The current format runs an array of 89 jobs, maximum 10 at a time. The top number should be the length of your list, the one after the "%" should be the number you want happening simultaneously. 
 
 #Downloading a genome or annotation from COGE
 
