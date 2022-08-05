@@ -20,8 +20,11 @@
 		prefetch SRR13449534 #This command prepares the download
 		fasterq-dump SRR13449534 #Download the file (fasterq-dump is the high speed version of fastq-dump, which "dumps" a fastq file onto the local server)
 		gzip SRR13449534.fastq & #Compress the fastq file so it takes up less space
+	
 	#For multiple files, use a slurm script like the example. Note that you can change the options for file location etc.
 	#Download_from_SRA_array.sh is a slurm script to download SRA files from an id list like the example attached. To modify it for your own needs, you must 1) make your own id list and 2) change the line #SBATCH --array=1-89%10. The current format runs an array of 89 jobs, maximum 10 at a time. The top number should be the length of your list, the one after the "%" should be the number you want happening simultaneously. 
+	
+	#There are a variety of other approaches to batch downloading from the SRA. Explore what works for you. 
 
 #Downloading a genome or annotation from COGE
 
