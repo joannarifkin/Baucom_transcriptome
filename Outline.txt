@@ -16,7 +16,8 @@ Outline
     Sample: SRA download to scratch
 
 #2. QC reads (after 1)
-    FastQC
+    MultiQC for many files
+	FastQC for just a few
 
 #3. Trim reads (after 1 and 2)
     Deciding whether to trim 

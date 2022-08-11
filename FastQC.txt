@@ -1,5 +1,0 @@
-#Performing sequence QC with FastQC
-
-#Download FastQC from this website: https://www.bioinformatics.babraham.ac.uk/projects/download.html#fastqc
-#Transfer the zip file into your software directory on Great Lakes and unzip it ("unzip fastqc[version].zip")
-#INSTALL.txt contains instructions to run FastQC

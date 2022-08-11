@@ -1,0 +1,24 @@
+#Performing sequence QC with FastQC
+
+#Download FastQC from this website: https://www.bioinformatics.babraham.ac.uk/projects/download.html#fastqc
+#Transfer the zip file into your software directory on Great Lakes and unzip it ("unzip fastqc[version].zip")
+#INSTALL.txt contains instructions to run FastQC
+
+#Add FastQC to your path, either permanently via your .bash_profile or using this command: export PATH=$PATH:/path/to/FastQC
+
+
+nohup ./fastqc *.fasta & #Run FastQC on all MGI samples 
+
+Make sure x11 forwarding is enabled AND xming is running https://stackoverflow.com/questions/34932495/forward-x11-failed-network-error-connection-refused/44575703
+nohup zcat SRR3474496.fastq.gz | fastqc &
+
+GACTATTCAGGTGAGGGATGTACGCGGAGTAGTCGCGCCGGTTCGTACCC
+
+
+zcat  SRR13449495.fastq.gz | fastqc stdin -o FastQC &
+
+
+#QC with MultiQC
+
+#First, install the package
+python3 -m pip install --user multiQC
