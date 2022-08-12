@@ -1,4 +1,5 @@
-#Performing sequence QC with FastQC
+
+#Performing sequence QC 
 
 #Download FastQC from this website: https://www.bioinformatics.babraham.ac.uk/projects/download.html#fastqc
 #Transfer the zip file into your software directory on Great Lakes and unzip it ("unzip fastqc[version].zip")
@@ -6,19 +7,28 @@
 
 #Add FastQC to your path, either permanently via your .bash_profile or using this command: export PATH=$PATH:/path/to/FastQC
 
-
-nohup ./fastqc *.fasta & #Run FastQC on all MGI samples 
+#You can run FastQC interactively if you just want to look at one file at a time:
 
 Make sure x11 forwarding is enabled AND xming is running https://stackoverflow.com/questions/34932495/forward-x11-failed-network-error-connection-refused/44575703
-nohup zcat SRR3474496.fastq.gz | fastqc &
 
-GACTATTCAGGTGAGGGATGTACGCGGAGTAGTCGCGCCGGTTCGTACCC
+zcat your_file.fastq.gz | fastqc stdin -o FastQC &
 
-
-zcat  SRR13449495.fastq.gz | fastqc stdin -o FastQC &
+#To run FastQC on all the files in the directory, run the script FastQC_array.sh using sbatch. 
 
 
-#QC with MultiQC
+#Summarize FastQC results with MultiQC
 
-#First, install the package
+#Rather than looking at each FastQC result individually, summarize them with MultiQC
+
+#First, install the package https://multiqc.info/docs/#installing-multiqc
+#I have installed with pip and upgraded a couple of packages with dependencies
 python3 -m pip install --user multiQC
+python3 -m pip install --user numpy --upgrade
+python3 -m pip install --user matplotlib --upgrade
+
+#To run MultiQC on all the files in a directory of sequence, simply enter:
+ multiqc [directory] &
+ multiqc . & #Run on current directory
+ multiqc /results/ #Run on directory via path
+#MultiQC will generate an .html file. The easiest way to see this is to transfer it to your computer 
+

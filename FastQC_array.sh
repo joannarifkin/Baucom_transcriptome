@@ -13,10 +13,8 @@
 #SBATCH --partition=standard
 #SBATCH --output=%j.log
 #SBATCH --error=error_%j.log
-#SBATCH --array=1-89%20
+#SBATCH --array=1-89%5
 
-	id=$(awk "NR==${SLURM_ARRAY_TASK_ID}" id_list.txt)
-	srun echo "SRA ID $id: "
-	prefetch $id
-	fasterq-dump $id 
-	gzip $id.fastq 
+mkdir -p ./FastQC/
+file=$(ls ./*.fastq.gz | sed -n ${SLURM_ARRAY_TASK_ID}p)
+fastqc -o ./FastQC/ $file
