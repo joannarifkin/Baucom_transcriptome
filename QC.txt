@@ -32,3 +32,18 @@ python3 -m pip install --user matplotlib --upgrade
  multiqc /results/ #Run on directory via path
 #MultiQC will generate an .html file. The easiest way to see this is to transfer it to your computer 
 
+#Output
+  /// MultiQC 🔍 | v1.12
+
+|           multiqc | Search path : /gpfs/accounts/rsbaucom_root/rsbaucom0/jlrifkin/Transcriptome_fitness_expression/FastQC
+|         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 178/178
+
+[jlrifkin@gl-login2 FastQC]$ |            fastqc | Found 89 reports
+|           multiqc | Compressing plot data
+|           multiqc | Report      : multiqc_report.html
+|           multiqc | Data        : multiqc_data
+|           multiqc | MultiQC complete
+
+[1]+  Done                    multiqc .
+
+In transcriptome sequence, we expect to see high levels of sequence duplication. 
