@@ -1,0 +1,11 @@
+#Trimming with Trimmomatic
+
+#To install Trimmomatic, you need Apache Ant
+https://ant.apache.org/srcdownload.cgi
+
+
+#Download Trimmomatic from the github and unpack the zip / tar 
+	https://github.com/usadellab/Trimmomatic/
+
+ unzip Trimmomatic-0.39.zip
+ tar -xzvf Trimmomatic-0.39.tar.gz

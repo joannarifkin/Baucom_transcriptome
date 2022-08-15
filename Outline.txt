@@ -16,11 +16,11 @@ Outline
     Sample: SRA download to scratch
 
 #2. QC reads (after 1)
-    MultiQC for many files
-	FastQC for just a few
+	Use FastQC to get a file-by-file picture of what's up with your reads
+	Use MultiQC to summarize FastQC results for many files
 
 #3. Trim reads (after 1 and 2)
-    Deciding whether to trim 
+    Deciding whether to trim: trimming off adapters is an extra computational step that adds time. It's probably better for downstream analyses but can be skipped if you want to. 
     Trimmomatic
 
 #4. Prepare your resources: find your genome, find your annotation (if using), choose your aligner, update your alignment software, and index your genome (before or after 1)
