@@ -1,6 +1,36 @@
 
 #Performing sequence QC 
 
+#Using an installed version:
+
+	module spider fastqc
+	  fastqc:
+	-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		 Versions:
+			fastqc/0.11.5-n66edxk
+			fastqc/0.11.9-p6ckgle
+
+	-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	  For detailed information about a specific "fastqc" package (including how to load the modules) use the module's full name.
+	  Note that names that have a trailing (E) are extensions provided by other modules.
+	  For example:
+
+		module spider fastqc/0.11.9-p6ckgle
+		
+	module spider fastqc/0.11.9-p6ckgle
+	
+    You will need to load all module(s) on any one of the lines below before the "fastqc/0.11.9-p6ckgle" module is available to load.
+
+      Bioinformatics
+      Bioinformatics  gcc/10.3.0-k2osx5y
+
+	module load Bioinformatics
+	module load Bioinformatics  gcc/10.3.0-k2osx5y
+	module load fastqc/0.11.9-p6ckgle
+
+
+
+#If you need to install your own version:
 #Download FastQC from this website: https://www.bioinformatics.babraham.ac.uk/projects/download.html#fastqc
 #Transfer the zip file into your software directory on Great Lakes and unzip it ("unzip fastqc[version].zip")
 #INSTALL.txt contains instructions to run FastQC

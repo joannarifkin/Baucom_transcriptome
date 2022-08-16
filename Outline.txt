@@ -1,5 +1,7 @@
 Outline
 
+#General Great Lakes tip - to find software, run "module spider <pkg_name>" and see if Great Lakes has a copy already installed
+
 #0. Identify your goals. Do you want to ...
     quantify expression levels?
     call SNPs?

@@ -1,6 +1,17 @@
 #Indexing a genome with STAR
 
-    #Installing / updating STAR - https://github.com/alexdobin/STAR
+	#Loading STAR via Great Lakes Bioinformatics
+	
+		module spider STAR
+
+    #You will need to load all module(s) on any one of the lines below before the "star/2.7.6a-aekjdpr" module is available to load.
+
+      Bioinformatics
+      Bioinformatics  gcc/10.3.0-k2osx5y
+
+	
+
+    #Installing / updating STAR - https://github.com/alexdobin/STAR - if for some reason you need to use a different version than the one that's installed on Great Lakes
 		# Get latest STAR source from releases
 			wget https://github.com/alexdobin/STAR/archive/2.7.10a.tar.gz #Check for latest version!
 			tar -xzf 2.7.10a.tar.gz
