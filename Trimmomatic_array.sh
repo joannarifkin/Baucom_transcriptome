@@ -17,8 +17,8 @@
 
 module load Bioinformatics
 module load Bioinformatics  gcc/10.3.0-k2osx5y
-module load fastqc/0.11.9-p6ckgle
-
+module load trimmomatic
 mkdir -p ./Trimmomatic/
-file=$(ls ./*.fastq.gz | sed -n ${SLURM_ARRAY_TASK_ID}p)
-TrimmomaticSE -threads 8 $file.fastq.gz Trimmomatic/trimmed_$file.fastq.gz ILLUMINACLIP:TruSeq2-SE:2:30:10 LEADING:3 TRAILING:3 MAXINFO:50:0.5 MINLEN:36 &
+file=$(ls *.fastq.gz | sed -n ${SLURM_ARRAY_TASK_ID}p)
+echo $file
+TrimmomaticSE -threads 8 $file /Trimmomatic/trimmed_$file ILLUMINACLIP:TruSeq2-SE:2:30:10 LEADING:3 TRAILING:3 MAXINFO:50:0.5 MINLEN:36 
