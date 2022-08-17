@@ -4,11 +4,17 @@
 module load Bioinformatics
 module load trimmomatic
 
+#You will need to download the relevant adapter file and provide the full path to it in the command
+https://github.com/usadellab/Trimmomatic/tree/main/adapters
+
+
 #Trimming with Trim Galore
 
       module load Bioinformatics
       module load Bioinformatics  gcc/10.3.0-k2osx5y
 	  module load trimgalore
+
+
 
 TrimmomaticSE -threads 8 ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 MAXINFO:50:0.5 MINLEN:36 -trimlog /Trimmomatic/$file.log SRR13449495.fastq.gz /Trimmomatic/trimmed_SRR13449495.fastq.gz &
 
@@ -21,4 +27,4 @@ ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15
 MINLEN:36
 
 
-TrimmomaticSE -threads 8 SRR13449495.fastq.gz /Trimmomatic/trimmed_SRR13449495.fastq.gz ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 MAXINFO:50:0.5 MINLEN:36   &
+TrimmomaticSE -threads 8 SRR13449495.fastq.gz Trimmomatic/trimmed_SRR13449495.fastq.gz ILLUMINACLIP:TruSeq2-SE:2:30:10 LEADING:3 TRAILING:3 MAXINFO:50:0.5 MINLEN:36 &
