@@ -4,3 +4,21 @@
 module load Bioinformatics
 module load trimmomatic
 
+#Trimming with Trim Galore
+
+      module load Bioinformatics
+      module load Bioinformatics  gcc/10.3.0-k2osx5y
+	  module load trimgalore
+
+TrimmomaticSE -threads 8 ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 MAXINFO:50:0.5 MINLEN:36 -trimlog /Trimmomatic/$file.log SRR13449495.fastq.gz /Trimmomatic/trimmed_SRR13449495.fastq.gz &
+
+SRR13449495.fastq.gz
+
+Usage: TrimmomaticSE [-threads <threads>] [-phred33|-phred64] [-trimlog <trimLogFile>] [-quiet] <inputFile> <outputFile> <trimmer1>...
+
+java -jar trimmomatic-0.30.jar SE s_1_1_sequence.txt.gz lane1_forward.fq.gz
+ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15
+MINLEN:36
+
+
+TrimmomaticSE -threads 8 SRR13449495.fastq.gz /Trimmomatic/trimmed_SRR13449495.fastq.gz ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 MAXINFO:50:0.5 MINLEN:36   &
