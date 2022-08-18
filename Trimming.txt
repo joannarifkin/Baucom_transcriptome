@@ -2,10 +2,14 @@
 
 #Load Trimmomatic from the Bioinformatics collection on Great Lakes
 module load Bioinformatics
+      module load Bioinformatics  gcc/10.3.0-k2osx5y
 module load trimmomatic
 
 #You will need to download the relevant adapter file and provide the full path to it in the command
 https://github.com/usadellab/Trimmomatic/tree/main/adapters
+
+#Sample command for a single file 
+TrimmomaticSE -threads 8 SRR13449495.fastq.gz Trimmomatic/trimmed_SRR13449495.fastq.gz ILLUMINACLIP:TruSeq2-SE:2:30:10 LEADING:3 TRAILING:3 MAXINFO:50:0.5 MINLEN:36 &
 
 
 #Trimming with Trim Galore
@@ -14,17 +18,6 @@ https://github.com/usadellab/Trimmomatic/tree/main/adapters
       module load Bioinformatics  gcc/10.3.0-k2osx5y
 	  module load trimgalore
 
+#Sample command for a single file 
+trim_galore --fastqc  --output_dir Cut_Adapt --cores 3 SRR13449495.fastq.gz &
 
-
-TrimmomaticSE -threads 8 ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 MAXINFO:50:0.5 MINLEN:36 -trimlog /Trimmomatic/$file.log SRR13449495.fastq.gz /Trimmomatic/trimmed_SRR13449495.fastq.gz &
-
-SRR13449495.fastq.gz
-
-Usage: TrimmomaticSE [-threads <threads>] [-phred33|-phred64] [-trimlog <trimLogFile>] [-quiet] <inputFile> <outputFile> <trimmer1>...
-
-java -jar trimmomatic-0.30.jar SE s_1_1_sequence.txt.gz lane1_forward.fq.gz
-ILLUMINACLIP:TruSeq3-SE:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15
-MINLEN:36
-
-
-TrimmomaticSE -threads 8 SRR13449495.fastq.gz Trimmomatic/trimmed_SRR13449495.fastq.gz ILLUMINACLIP:TruSeq2-SE:2:30:10 LEADING:3 TRAILING:3 MAXINFO:50:0.5 MINLEN:36 &
