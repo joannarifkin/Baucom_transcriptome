@@ -1,0 +1,24 @@
+1. SRA practice, plus command line navigation and exploration practice
+	a. Find some transcriptome sequence data from a species of your choice on the SRA. Identify the different parts of the record: BioProject, BioSample, Experiment, Run, Accession. Identify what was sequenced, why, on what platform, what the layout was (single- vs paired-end), and what the read lengths were.
+
+	b. Download the data. 
+	Easy mode: download to your computer and move the files over manually. 
+	Medium mode: download using SRAtools. Also, download a .csv file explaining what the samples are. (Poke around in the "send to" menu.)
+	Hard mode: download using SRAtools in a SLURM script.
+
+	c. Put the data somewhere sensible! Easy mode: make a directory in your home directory to hold this project, and set up a "raw data" or "raw sequence" directory within it. 
+	Medium mode: make copies of your data. Then delete the copies. 
+	Hard mode: get access to the Baucom lab allocations on /turbo (long-term storage) and /scratch (short-term storage of large files).
+
+	d. Look at your data. How big is the file in bytes? What about in kilo-, mega-, and gigabytes? (Play around with ls -l and ls -lh. What do -l and -h stand for? Remember that you can append --help to most bash commands to get a list of options!) 
+	Easy mode: What does a fastq file look like (use the "less" command), and what information is encoded in the different lines? How do you QC programs confirm the file is formatted correctly? What is the difference between a fastq and fasta file? What about fq and fa? 
+	Medium mode: how much space does compression save? Explore the relative sizes of a fastq and fastq.gz file using gunzip and gzip!
+	Hard mode: make a copy of one of the fastq.gz files, then truncate it to be a small file (10-20 lines). See what happens to the downtown if you break it in different places or use vi, awk, or sed to alter the set of characters used in different lines.
+	
+2. QC those data!
+	a. Use FastQC and multiQC to learn more about the libraries. What's wrong with them?
+	Easy mode: run the commands file-by-file.
+	Hard mode: use a SLURM script to do the QC steps.
+
+3. Trim the data!
+	We will probably check in again before you get here :)
