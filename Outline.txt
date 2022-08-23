@@ -33,7 +33,7 @@ Outline
     For long reads: GMAP (unlikely to come up) https://academic.oup.com/bioinformatics/article/34/5/748/4562330
 
 #5. Align your reads!
-
+	STAR 2-pass (https://github.com/alexdobin/STAR) is recommended in the Broad Institute's GATK best practices. It is fast and sensitive. The 2-pass structure is tricky, but improves detection of splice junctions. The scripts here draw on this pipeline: https://evodify.com/rna-seq-star-snakemake/
 
 #6. Analyze! Select relevant steps below.
 

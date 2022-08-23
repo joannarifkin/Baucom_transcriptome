@@ -12,17 +12,25 @@
 	
 
     #Installing / updating STAR - https://github.com/alexdobin/STAR - if for some reason you need to use a different version than the one that's installed on Great Lakes
-		# Get latest STAR source from releases
-			wget https://github.com/alexdobin/STAR/archive/2.7.10a.tar.gz #Check for latest version!
-			tar -xzf 2.7.10a.tar.gz
-			cd STAR-2.7.10a
-			cd source
-			make STAR
-		#Add it to your path
-			export PATH=$PATH:$PWD/STAR-2.7.10a/source
-		#Or add it to your .bash_profile
-			#Edit your bash profile to include the following line
-			PATH=$PATH:[~your path to this~]/STAR-2.7.10a/source
+
+		#You have two options for version. Running 
+
+				module load Bioinformatics
+				module load Bioinformatics  gcc/10.3.0-k2osx5y
+				module load star/2.7.6a-aekjdpr
+		
+		#will call the STAR version installed on Great Lakes for general use. Or you can install a newer version and add it to your path.
+		#Alternatively, you can get latest STAR source from releases
+				wget https://github.com/alexdobin/STAR/archive/2.7.10a.tar.gz #Check for latest version!
+				tar -xzf 2.7.10a.tar.gz
+				cd STAR-2.7.10a
+				cd source
+				make STAR
+			#Add it to your path
+				export PATH=$PATH:$PWD/STAR-2.7.10a/source
+			#Or add it to your .bash_profile
+				#Edit your bash profile to include the following line
+				PATH=$PATH:[~your path to this~]/STAR-2.7.10a/source
 
 	#Running the index
 		#Write a Slurm script for the indexing job - see STAR_index.sh for an example

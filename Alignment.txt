@@ -1,0 +1,10 @@
+#Aligning with STAR 2-pass
+
+#STAR 2-pass first aligns all samples to collect a database of splice junctions, then repeats the alignment with the complete list of splice junctions as priors. There are two SLURM demo scripts here
+#Star_pass_1_array.sh collects a list of .fastq.gz files (the expression as written calls 5 files)
+#You have two options for version. Adding 
+
+		module load Bioinformatics
+		module load Bioinformatics  gcc/10.3.0-k2osx5y
+		module load star/2.7.6a-aekjdpr
+will call the STAR version installed on Great Lakes for general use. Or you can install a newer version and add it to your path.
