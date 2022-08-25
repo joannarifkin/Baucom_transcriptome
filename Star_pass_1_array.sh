@@ -1,14 +1,12 @@
 #!/bin/bash
 
-
-
 #SBATCH --job-name=STAR_pass_1_Rifkin
 #SBATCH --mail-user=#SBATCH --mail-user=jlrifkin@umich.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
-#SBATCH --cpus-per-task=1
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --mem-per-cpu=1000m 
+#SBATCH --cpus-per-task=2
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=4
+#SBATCH --mem-per-cpu=12GB
 #SBATCH --time=20:00
 #SBATCH --partition=standard
 #SBATCH --output=%j.log
@@ -18,18 +16,21 @@
 #module load Bioinformatics
 #module load Bioinformatics gcc/10.3.0-k2osx5y
 #module load trimgalore
-mkdir -p ./Trim_galore/
+
 file=$(ls SRR134494*.fastq.gz | sed -n ${SLURM_ARRAY_TASK_ID}p)
+#awk '{sub(/.*/, ""); print}' $file
+#samplename=$(sed 's/.fastq.gz//' $file)
+samplename=${file%fastq.gz}
+
 echo $file
-trim_galore --fastqc --output_dir Trim_galore --cores 3 $file 
+echo $samplename
 
+mkdir -p ./STAR/
+mkdir -p ./STAR/Pass1/
 
-
-mkdir Sample1_pass1
-cd Sample1_pass1
-
-STAR --runThreadN 20 \
---genomeDir /path/to/canFam3STAR \
---readFilesIn /path/to/Sample1_001_R1.fastq.gz,/path/to/Sample1_002_R1.fastq.gz /path/to/Sample1_001_R2.fastq.gz,/path/to/Sample1_002_R2.fastq.gz \
---readFilesCommand zcat  \
+STAR --runThreadN 6 \
+--genomeDir /home/jlrifkin/Analyses/Transcriptome/STAR/Ipomoea_reference \
+--readFilesIn $file \
+--readFilesCommand zcat \
+--outFileNamePrefix ./STAR/Pass1/$samplename \
 --outSAMtype BAM Unsorted

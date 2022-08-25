@@ -21,4 +21,25 @@
 	Hard mode: use a SLURM script to do the QC steps.
 
 3. Trim the data!
-	We will probably check in again before you get here :)
+	Take a look at the QC reports from the data you downloaded. Are there adapters? If so, do you want to trim them? Skim a few papers and discussion fora on the pros and cons of trimming for your desired use, and explain your decision. Use either Trim Galore or Trimmomatic to trim, if it's appropriate for your needs.
+	
+4. Alignments!
+	a. Gotta align your reads to something. Find a reference genome you want to use, from the same or a related species. Or an unrelated species, I'm not the boss of you. 
+	Easy mode: Download your genome and index it.
+	Medium mode: What is a genome index? Why do we need to make them before aligning reads?
+	
+	b. Align a read or paired-end set of files.
+	Easy mode: Run the alignment interactively.
+	Medium mode: Edit the SLURM script to align your reads to your genome.
+	
+	c. Take a look at the output files. 
+	Easy mode: Check out the logfiles from the Star or RSubreads run. What kinds of logfiles are there? What do they tell you about what you just did / tried to do? Did it work? What went well? What went poorly?
+	Medium mode: Are they .sam or .bam files? What's the difference? How big are the files? 
+	Hard mode: Look at the files using "less." Did that work? Try running the following commands: 
+		
+		module load Bioinformatics
+		module load samtools/1.13-fwwss5n
+		samtools -view [your_file].Aligned.out.bam | less
+		
+		What are those commands doing? Why might we need to use them?
+		What is the structure of the alignment output file? What do the different 
