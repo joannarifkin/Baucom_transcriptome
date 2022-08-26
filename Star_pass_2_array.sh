@@ -1,16 +1,16 @@
 #!/bin/bash
 
+#SBATCH --account=rsbaucom0
 #SBATCH --job-name=STAR_pass_2_Rifkin
-#SBATCH --mail-user=#SBATCH --mail-user=jlrifkin@umich.edu
+#SBATCH --mail-user=jlrifkin@umich.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --cpus-per-task=6
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=4
-#SBATCH --mem=12GB
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem=6GB
 #SBATCH --time=20:00
+#SBATCH --output=STAR_pass_2-%A-%a
 #SBATCH --partition=standard
-#SBATCH --output=%j.log
-#SBATCH --error=error_%j.log
 #SBATCH --array=1-5%2
 
 #module load Bioinformatics

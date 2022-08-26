@@ -1,18 +1,16 @@
 #!/bin/bash
 
-
-
+#SBATCH --account=rsbaucom0
 #SBATCH --job-name=STAR_index_Rifkin_ipomoea
-#SBATCH --mail-user=#SBATCH --mail-user=jlrifkin@umich.edu
+#SBATCH --mail-user=jlrifkin@umich.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --cpus-per-task=6
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --mem-per-cpu=10000m 
+#SBATCH --mem-per-cpu=1GB 
 #SBATCH --time=10:00
 #SBATCH --partition=standard
-#SBATCH --output=/home/jlrifkin/Analyses/Transcriptome/STAR/Ipomoea_reference/test_%j.log
-#SBATCH --error=/home/jlrifkin/Analyses/Transcriptome/STAR/Ipomoea_reference/error_%j.log
+#SBATCH --output=STAR_index-%A-%a
 
 
 STAR --runThreadN 6 \

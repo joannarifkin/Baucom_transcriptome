@@ -2,6 +2,7 @@
 
 
 
+#SBATCH --account=rsbaucom0
 #SBATCH --job-name=SRA_download_Rifkin_ipomoea
 #SBATCH --mail-user=#SBATCH --mail-user=jlrifkin@umich.edu
 #SBATCH --mail-type=BEGIN,END,FAIL
