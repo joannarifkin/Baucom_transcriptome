@@ -11,7 +11,7 @@
 #SBATCH --mem-per-cpu=1GB 
 #SBATCH --time=10:00
 #SBATCH --partition=standard
-#SBATCH --output=FastQC-%A-%a
+#SBATCH --output=FastQC-%A-%a.log
 #SBATCH --array=1-89%5
 
 module load Bioinformatics

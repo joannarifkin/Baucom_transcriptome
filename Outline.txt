@@ -15,25 +15,49 @@ Outline
 #1. Download / obtain sequence
     Where will you store your sequence? Is this short-term or long-term storage?
     Note that most sequencing facilities will give you a portal or wget script to download new reads. 
-    Sample: SRA download to scratch
+	Detailed instructions: 
+		Downloading_and_obtaining_sequence.txt 
+    Sample script:
+		Download_from_SRA_array.sh will download a list of files from the SRA. 
 
 #2. QC reads (after 1)
 	Use FastQC to get a file-by-file picture of what's up with your reads
 	Use MultiQC to summarize FastQC results for many files
+	Detailed instructions: 
+		QC.txt
+    Sample script: 
+		FastQC_array.sh
+		
 
 #3. Trim reads (after 1 and 2)
     Deciding whether to trim: trimming off adapters is an extra computational step that adds time. It's probably better for some downstream analyses, but reads clipped by trimming software can often be rescued and some downstream software (e.g. Subreads, GATK, STAR) handles untrimmed reads fine, particularly with RNASeq. Trimming reduces available information, as well as increasing computational demands. Trim if you want to prioritize quality for some applications (e.g. assembly), or skip trimming if you're in a hurry, really want to squeeze every drop out of the sequence data, or are using a pipeline that doesn't require it. Best practices and research findings on this seem to change frequently, so it's a good place to weigh the options and make a judgment call. 
 	There are many options; here are example scripts for two of them
     Trimmomatic - powerful, tuneable trimming software for adapter removal and quality trimming
 	Trim galore - easy to use wrapper for FastQC and Cutadapt, which automatically removes Illumina adapters
+	Detailed instructions: 
+		Trimming.txt
+    Sample script: 
+		Trim_Galore_array.sh
+		Trimmomatic_array.sh
+
 
 #4. Prepare your resources: find your genome, find your annotation (if using), choose your aligner, update your alignment software, and index your genome (before or after 1)
     Remember, a DNA aligner isn't an RNA aligner!
     For short reads: STAR or RSubreads https://academic.oup.com/nar/article/47/8/e47/5345150 | https://doi.org/10.1093/nar/gkz114
     For long reads: GMAP (unlikely to come up) https://academic.oup.com/bioinformatics/article/34/5/748/4562330
+	Detailed instructions: 
+		Downloading_and_obtaining_sequence.txt
+		Index_genome.txt
+    Sample script: 
+		STAR_index.sh
 
 #5. Align your reads!
 	STAR 2-pass (https://github.com/alexdobin/STAR) is recommended in the Broad Institute's GATK best practices. It is fast and sensitive. The 2-pass structure is tricky, but improves detection of splice junctions. The scripts here (Star_pass_1_array.sh, ) draw on this pipeline: https://evodify.com/rna-seq-star-snakemake/
+	Detailed instructions: 
+		Alignment.txt
+    Sample script: 
+		Star_pass_1_array.sh
+		Star_pass_2_array.sh
 
 #6. Analyze! Select relevant steps below.
 

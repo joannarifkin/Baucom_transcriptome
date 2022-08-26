@@ -10,7 +10,7 @@
 #SBATCH --mem=6GB
 #SBATCH --time=20:00
 #SBATCH --partition=standard
-#SBATCH --output=STAR_pass_2-%A-%a
+#SBATCH --output=STAR_pass_2-%A-%a.log
 #SBATCH --array=1-5%2
 
 #module load Bioinformatics

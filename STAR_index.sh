@@ -10,7 +10,7 @@
 #SBATCH --mem-per-cpu=1GB 
 #SBATCH --time=10:00
 #SBATCH --partition=standard
-#SBATCH --output=STAR_index-%A-%a
+#SBATCH --output=STAR_index-%A-%a.log
 
 
 STAR --runThreadN 6 \

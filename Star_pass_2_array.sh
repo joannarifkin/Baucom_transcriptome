@@ -7,9 +7,9 @@
 #SBATCH --cpus-per-task=6
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --mem=6GB
+#SBATCH --mem=12GB
 #SBATCH --time=20:00
-#SBATCH --output=STAR_pass_2-%A-%a
+#SBATCH --output=STAR_pass_2-%A-%a.log
 #SBATCH --partition=standard
 #SBATCH --array=1-5%2
 
@@ -34,7 +34,7 @@ STAR --runThreadN 6 \
 --readFilesCommand zcat \
 --outFileNamePrefix ./STAR/Pass2/$samplename \
 --outSAMtype BAM SortedByCoordinate \
---sjdbFileChrStartEnd /STAR/SJ.all.tab
+--sjdbFileChrStartEnd STAR/SJ.all.tab
 
 
 

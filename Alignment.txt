@@ -19,6 +19,9 @@
 	
 		#Splice junctions do not need to be concatenated - it's just easier to concatenate them first. But you can also supply all the individual splice junction files. Splice junction filtering is optional. 
 	
+	#Star_pass_2_array.sh is similar to pass 1 except ... it's pass 2. It includes a link to the splice junctions generated in pass 1 and outputs sorted rather than unsorted .bam files. 
+	
+	
 	
 	
 	
