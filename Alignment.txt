@@ -1,14 +1,20 @@
 #Aligning with STAR 2-pass
 
 	#STAR 2-pass first aligns all samples to collect a database of splice junctions, then repeats the alignment with the complete list of splice junctions as priors. There are two SLURM demo scripts here
-	#Star_pass_1_array.sh collects a list of .fastq.gz files (the expression as written calls 5 files)
-	#You have two options for version. Adding 
-
-			module load Bioinformatics
-			module load Bioinformatics  gcc/10.3.0-k2osx5y
-			module load star/2.7.6a-aekjdpr
-	will call the STAR version installed on Great Lakes for general use. Or you can install a newer version and add it to your path.
-
+	
 	#First, make sure your genome is indexed (see Indexing)
 	
-	#Run the first pass, using an adaptation of Star_pass_1_array.sh. Submit the script with "sbatch Star_pass_1_array.sh" (or similar). Pay attention to memory and time limits - alignment is a memory-intensive process. If you're getting out-of-memory errors, slowly increase the --mem-per-CPU allocation.
+	#Star_pass_1_array.sh collects a list of .fastq.gz files (the expression as written calls 5 files)
+	
+		#You have two options for version. Adding 
+
+				module load Bioinformatics
+				module load Bioinformatics  gcc/10.3.0-k2osx5y
+				module load star/2.7.6a-aekjdpr
+		will call the STAR version installed on Great Lakes for general use. Or you can install a newer version and add it to your path.
+		
+		#To run the first pass, use an adaptation of Star_pass_1_array.sh. Submit the script with "sbatch Star_pass_1_array.sh" (or similar). Pay attention to memory and time limits - alignment is a memory-intensive process. If you're getting out-of-memory errors, slowly increase the --mem-per-CPU allocation.
+		
+	#Collect_splice_jxns.sh will filter and collect the splice junctions from Pass 1. It is a simple bash script rather than a slurm script, because it is small and resource-light enough that queueing it isn't necessary. You could adapt it into a slurm script if you wanted to. To run it, make it executable and run "bash Collect_splice_jxns.sh" on your own executable version with the correct file locations. 
+	
+	
