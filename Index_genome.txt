@@ -64,4 +64,7 @@
 				 transcriptInfo.tab
 
 
-#Indexing a genome with RSubreads
+#Indexing a genome with RSubread
+
+	#To index your genome with RSubread, you can either run the commands interactively (either from the RStudio Great Lakes GUI )
+	#In RStudio on Great Lakes, I requested 12GB of memory to successfully index the I. purpurea genome in 11.3 minutes
