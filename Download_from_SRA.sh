@@ -12,7 +12,7 @@
 #SBATCH --mem-per-cpu=1GB 
 #SBATCH --time=10:00
 #SBATCH --partition=standard
-#SBATCH --output=STAR_index-%A-%a.log
+#SBATCH --output=SRA_download-%A-%a.log
 #SBATCH --array=1-2
 
 	vdb-config --prefetch-to-cwd
