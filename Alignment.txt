@@ -6,12 +6,20 @@
 	
 	#Star_pass_1_array.sh collects a list of .fastq.gz files (the expression as written calls 5 files)
 	
-		#You have two options for version. Adding 
+		#You have three options for version. Adding 
 
 				module load Bioinformatics
 				module load Bioinformatics  gcc/10.3.0-k2osx5y
 				module load star/2.7.6a-aekjdpr
-		will call the STAR version installed on Great Lakes for general use. Or you can install a newer version and add it to your path.
+				
+		#will call the STAR version installed on Great Lakes for general use. Or you can install a newer version and add it to your path.
+		
+				module use /nfs/turbo/rsbaucom/lab/Lmod
+				module load STAR_module
+		
+		#will call version 2.7.10a, installed in the Baucom lab turbo storage for lab use.
+		
+		#Or you can install a newer version and add it to your path.
 		
 		#To run the first pass, use an adaptation of Star_pass_1_array.sh. Submit the script with "sbatch Star_pass_1_array.sh" (or similar). Pay attention to memory and time limits - alignment is a memory-intensive process. If you're getting out-of-memory errors, slowly increase the --mem-per-CPU allocation.
 		

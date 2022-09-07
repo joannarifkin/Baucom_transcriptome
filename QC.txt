@@ -1,7 +1,7 @@
 
 #Performing sequence QC 
 
-#Using an installed version:
+#Using the installed version:
 
 	module spider fastqc
 	  fastqc:
