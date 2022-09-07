@@ -2,6 +2,15 @@ Outline
 
 #General Great Lakes tip - to find software, run "module spider <pkg_name>" and see if Great Lakes has a copy already installed
 
+
+#I have also provided some modules in the Baucom lab long-term storage: /nfs/turbo/rsbaucom/lab/Lmod
+#To use them, first type: 
+#		module use /nfs/turbo/rsbaucom/lab/Lmod 
+#then 
+#		module load [module_name]
+
+#Finally, you can always install your own copy of software and add it to your path
+
 #0. Identify your goals. Do you want to ...
     quantify expression levels?
     call SNPs?
