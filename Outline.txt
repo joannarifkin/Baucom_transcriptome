@@ -67,6 +67,8 @@ Outline
     Sample script: 
 		Star_pass_1_array.sh
 		Star_pass_2_array.sh
+		
+	RSubreads is a fast and powerful aligning and read-counting pipeline embedded in R. See 
 
 #6. Analyze! Select relevant steps below.
 
