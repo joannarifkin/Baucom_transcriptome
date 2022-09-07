@@ -15,6 +15,8 @@
 #SBATCH --output=SRA_download-%A-%a.log
 #SBATCH --array=1-89%10
 
+	module use /nfs/turbo/rsbaucom/lab/Lmod
+	module load SRA_tools_module
 	vdb-config --prefetch-to-cwd
 	id=$(awk "NR==${SLURM_ARRAY_TASK_ID}" id_list.txt)
 	srun echo "SRA ID $id: "
