@@ -8,7 +8,9 @@ setwd("/home/jlrifkin/Analyses/Transcriptome/RSubread")
   # install.packages("BiocManager")
 
 #BiocManager::install("Rsubread") #Note that this may 
-library(Rsubread)
+#library(Rsubread)
+#BiocManager::install("WGCNA",lib="/nfs/turbo/rsbaucom/lab/SOFTWARE/R/4.2/library", force=TRUE)
+library("Rsubread",lib="/nfs/turbo/rsbaucom/lab/SOFTWARE/R/4.2/library")
 ref <- system.file("extdata","reference.fa",package="Rsubread") #Demo genome and index, included with the package
 buildindex(basename="reference_index",reference=ref) #Note that this will build in the current working directory. Make sure to setwd() to the place you want the index to be!
 
