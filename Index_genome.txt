@@ -66,5 +66,15 @@
 
 #Indexing a genome with RSubread
 
-	#To index your genome with RSubread, you can either run the commands interactively (either from the RStudio Great Lakes GUI )
-	#In RStudio on Great Lakes, I requested 12GB of memory to successfully index the I. purpurea genome in 11.3 minutes
+	#To index your genome with RSubread, you have three options
+	
+		# 1. Run the commands interactively from the RStudio Great Lakes GUI: go here and create an R session for yourself https://greatlakes.arc-ts.umich.edu/pun/sys/dashboard/batch_connect/sessions. Use this script (RSubread_index_interactive.R) as a basis. In RStudio on Great Lakes, I requested 12GB of memory to successfully index the I. purpurea genome in 11.3 minutes
+		
+		#2. Run the commands interactively in the terminal on Great Lakes R. To call R in Great Lakes, run the following commands:
+		
+			module load R
+			R
+		
+			#This will open a command-line R environment. Again, base your run on RSubread_index_interactive.R. 
+		
+		#3. You can submit an R job wrapped in a Slurm job (see SLURM_RSubread_index.sh, which calls RSubread_index_script.R). This is the most efficient way to do large and complex but requires a little extra setup.

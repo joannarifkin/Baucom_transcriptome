@@ -57,27 +57,36 @@ Outline
 	Detailed instructions: 
 		Downloading_and_obtaining_sequence.txt
 		Index_genome.txt
-    Sample script: 
+    Sample scripts: 
 		STAR_index.sh
-
+		RSubread_index_script.R
+		SLURM_RSubread_index.sh
+		RSubread_index_script_interactive.R
+		
+		
 #5. Align your reads!
-	STAR 2-pass (https://github.com/alexdobin/STAR) is recommended in the Broad Institute's GATK best practices. It is fast and sensitive. The 2-pass structure is tricky, but improves detection of splice junctions. The scripts here (Star_pass_1_array.sh, ) draw on this pipeline: https://evodify.com/rna-seq-star-snakemake/
+	
+	STAR 2-pass (https://github.com/alexdobin/STAR) is recommended in the Broad Institute's GATK best practices. It is fast and sensitive. The 2-pass structure is tricky, but improves detection of splice junctions. The scripts here draw on this pipeline: https://evodify.com/rna-seq-star-snakemake/
+
+	RSubread is a fast and powerful aligning and read-counting pipeline embedded in R. It can be run either interactively or https://www.biostars.org/p/334107/
+
 	Detailed instructions: 
 		Alignment.txt
     Sample script: 
 		Star_pass_1_array.sh
 		Star_pass_2_array.sh
 		
-	RSubreads is a fast and powerful aligning and read-counting pipeline embedded in R. See 
 
 #6. Analyze! Select relevant steps below.
 
 
 #7. Quantify expression levels
 
-    Count reads - edgeR in rsubreads
+    Count reads - edgeR, STAR-featureCounts, cuffdiff2
 
-    Compare read counts - deSEQ in rsubreads
+    Compare read counts - edgeR, deSEQ2 
+	
+	Visualize data using VIDGER
     
 #8. Call SNPs
 

@@ -12,12 +12,16 @@
 				module load Bioinformatics  gcc/10.3.0-k2osx5y
 				module load star/2.7.6a-aekjdpr
 				
-		#will call the STAR version installed on Great Lakes for general use. Or you can install a newer version and add it to your path.
+			#will call the STAR version installed on Great Lakes for general use. 
+		
+		#Or you can install a newer version and add it to your path.
+		
+		#Finally,
 		
 				module use /nfs/turbo/rsbaucom/lab/Lmod
 				module load STAR_module
 		
-		#will call version 2.7.10a, installed in the Baucom lab turbo storage for lab use.
+			#will call version 2.7.10a, installed in the Baucom lab turbo storage for lab use.
 		
 		#Or you can install a newer version and add it to your path.
 		
@@ -30,6 +34,7 @@
 	#Star_pass_2_array.sh is similar to pass 1 except ... it's pass 2. It includes a link to the splice junctions generated in pass 1 and outputs sorted rather than unsorted .bam files. 
 	
 	
+#Aligning with RSubread
 	
 	
 	
