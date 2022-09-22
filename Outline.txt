@@ -32,6 +32,7 @@ Outline
 #2. QC reads (after 1)
 	Use FastQC to get a file-by-file picture of what's up with your reads
 	Use MultiQC to summarize FastQC results for many files
+	Consider the specific QC expectations for your sequencing type. What are your expectations about levels of sequence duplication, read length, and quality depending on whether you are using short- or long-read sequencing of a whole-genome library, a transcriptome library, a reduced representation library, etc.?
 	Detailed instructions: 
 		QC.txt
     Sample script: 
