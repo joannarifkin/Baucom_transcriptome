@@ -12,9 +12,10 @@
 #SBATCH --partition=standard
 #SBATCH --output=STAR_index-%A-%a.log
 
-
+module purge
 module use /nfs/turbo/rsbaucom/lab/Lmod #To use the GL version, replace these lines. To use a local version you add to your path, omit them.
 module load STAR_module
+module list
 
 
 STAR --runThreadN 6 \

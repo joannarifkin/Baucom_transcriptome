@@ -14,9 +14,11 @@
 #SBATCH --output=FastQC-%A-%a.log
 #SBATCH --array=1-89%5
 
+module purge
 module load Bioinformatics
 module load Bioinformatics  gcc/10.3.0-k2osx5y
 module load fastqc/0.11.9-p6ckgle
+module list
 
 mkdir -p ./FastQC/
 file=$(ls ./*.fastq.gz | sed -n ${SLURM_ARRAY_TASK_ID}p)

@@ -14,9 +14,11 @@
 #SBATCH --output=STAR_pass_2-%A-%a.log
 #SBATCH --array=1-89%5
 
+module purge
 module load Bioinformatics
 module load Bioinformatics  gcc/10.3.0-k2osx5y
 module load trimmomatic
+module list
 mkdir -p ./Trimmomatic/
 file=$(ls *.fastq.gz | sed -n ${SLURM_ARRAY_TASK_ID}p)
 echo $file

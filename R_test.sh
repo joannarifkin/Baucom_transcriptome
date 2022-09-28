@@ -13,8 +13,9 @@
 #SBATCH --output=RSubread_index-%A-%a.log
 
 
-
+module purge
 module load R
+module list
 R CMD BATCH R_test.R
 #
 #myvar <- randnorm(mean=0,sd=1,n=10)

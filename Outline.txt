@@ -73,10 +73,12 @@ Outline
 
 	Detailed instructions: 
 		Alignment.txt
-    Sample script: 
+    Sample scripts: 
 		Star_pass_1_array.sh
 		Star_pass_2_array.sh
-		
+		RSubread_align_interactive.R #Align small numbers of files interactively in RStudio or R running on Great Lakes
+		SLURM_RSubread_align.sh #Wrapper for submitting RSubread_align_script.R as a job
+		RSubread_align_script.R #Align large numbers of files unattended
 
 #6. Analyze! Select relevant steps below.
 
@@ -90,4 +92,6 @@ Outline
 	Visualize data using VIDGER
     
 #8. Call SNPs
+
+	#Filter SNPs
 
