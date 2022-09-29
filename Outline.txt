@@ -80,12 +80,24 @@ Outline
 		SLURM_RSubread_align.sh #Wrapper for submitting RSubread_align_script.R as a job
 		RSubread_align_script.R #Align large numbers of files unattended
 
-#6. Analyze! Select relevant steps below.
+#6. Analyze! Select relevant steps below. Note that you can also combine aligning and read-counting steps in RSubread or STAR, but the more steps you do at once, the more issues you have to debug when it doesn't work.
 
+#7. Post-process BAM files
+	
+	Some post-processing of alignment files is often advisable. E.g., sorting, adding or changing read groups, and marking PCR duplicates. Which steps are relevant will depend on your downstream goals. 
+		
+		Sorting is almost always a good idea because it makes downstream steps more efficient. It can be incorporated into mapping (Star_pass_2_array.sh outputs sorted reads) or done separately.
+		
+		The GATK best practices workflows include more BAM processing, but are less useful for non-model systems. Read groups are required in GATK tools. 
+		
+		Marking PCR duplicates can be useful for SNP-calling. However, it shouldn't be used with RADseq or read-counting. 
 
 #7. Quantify expression levels
 
-    Count reads - edgeR, STAR-featureCounts, cuffdiff2
+	#To count reads, read-counting software looks at the .bam or .sam alignment files, identifies the depth at different sites, and compares the depth across samples. Generally, the counting and comparison processes are tightly integrated. 
+
+    Count reads - RSubread-featureCounts, featureCounts, cuffdiff2
+		#All these read-counters will take in alignment files (.bam or .sam) and output a table of read depths. Note that featureCounts is an independent program implemented in the RSubread package and able to run independently. 
 
     Compare read counts - edgeR, deSEQ2 
 	
