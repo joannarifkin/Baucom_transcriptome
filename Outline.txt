@@ -92,6 +92,9 @@ Outline
 		
 		Marking PCR duplicates can be useful for SNP-calling. However, it shouldn't be used with RADseq or read-counting. 
 
+		Sample scripts: 
+		
+
 #7. Quantify expression levels
 
 	#To count reads, read-counting software looks at the .bam or .sam alignment files, identifies the depth at different sites, and compares the depth across samples. Generally, the counting and comparison processes are tightly integrated. 
