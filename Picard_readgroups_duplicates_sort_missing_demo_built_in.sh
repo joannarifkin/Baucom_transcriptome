@@ -1,10 +1,34 @@
-for i in "12" "13"
+#!/bin/bash
 
+#SBATCH --account=rsbaucom0
+#SBATCH --job-name=STAR_pass_2_Rifkin
+#SBATCH --mail-user=jlrifkin@umich.edu
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --cpus-per-task=6
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem=12GB
+#SBATCH --time=20:00
+#SBATCH --output=STAR_pass_2-%A-%a.log
+#SBATCH --partition=standard
+#SBATCH --array=1-5%2
+
+
+file=$(ls /scratch/rsbaucom_root/rsbaucom0/jlrifkin/Transcriptome_fitness_expression/STAR/Pass2/SRR134494*.bam | sed -n ${SLURM_ARRAY_TASK_ID}p)
+
+
+module purge
 module load Bioinformatics
 module load picard-tools/2.8.1
-PicardCommandLine -h
-PicardCommandLine SortSam
+module list 
 
+echo $file
+
+
+PicardCommandLine FixMateInformation 
+PicardCommandLine MarkDuplicates 
+PicardCommandLine AddOrReplaceReadGroups 
+/scratch/rsbaucom_root/rsbaucom0/jlrifkin/Transcriptome_fitness_expression/STAR/Pass2
 do
 
 
