@@ -7,7 +7,7 @@ setwd("/home/jlrifkin/Analyses/Transcriptome/RSubread/test")
 #if (!require("BiocManager", quietly = TRUE))
   # install.packages("BiocManager")
 
-#BiocManager::install("Rsubread") #Note that this may 
+#BiocManager::install("Rsubread") #Note that this may need to be installed
 library("Rsubread",lib="/nfs/turbo/rsbaucom/lab/SOFTWARE/R/4.2/library")
 
 
